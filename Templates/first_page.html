@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Options</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0c1f3f;
+            color: #f5f5f5;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 40px;
+            margin: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            color: #fff;
+        }
+
+        .admin-btn {
+            background-color: #003366;
+        }
+
+        .admin-btn:hover {
+            background-color: #002244;
+            box-shadow: 0 0 10px #003366aa;
+        }
+
+        .login-btn {
+            background-color: #2a6592;
+        }
+
+        .login-btn:hover {
+            background-color: #1d4564;
+            box-shadow: 0 0 10px #2a6592aa;
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome! Choose Login Type</h1>
+    <button class="button admin-btn" onclick="location.href='/admin/'">Admin Login</button>
+    <button class="button login-btn" onclick="location.href='/accounts/login/'">User Login</button>
+</body>
+</html>
