@@ -24,7 +24,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalog/',include('Catalog.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/logout/', views.CustomLogoutView.as_view(), name='logout'),
     path('', views.first_pg),
+
 ]
 urlpatterns += static(settings.STATIC_URL, document_root= settings.STATIC_ROOT)
 

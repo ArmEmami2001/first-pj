@@ -1,7 +1,8 @@
 {% extends "Catalog/base.html" %}
 
-{% block content %}
-<p>Logged out!</p>  
-
-<a href="{% url 'login'%}">Click here to login again.</a>
-{% endblock %}
+<form id="logout-form" action="{% url 'logout' %}" method="POST">
+  {% csrf_token %}
+  <button type="submit" style="background:none; border:none; color:inherit; cursor:pointer; padding:0; font:inherit;">
+    Logout
+  </button>
+</form>
