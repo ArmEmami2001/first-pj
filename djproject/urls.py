@@ -19,12 +19,13 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalog/',include('Catalog.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    # path('accounts/logout/', views.CustomLogoutView.as_view(), name='logout'),
+    path('accounts/logout/', LogoutView.as_view(next_page=None), name='logout'),
     path('', views.first_pg),
 
 ]

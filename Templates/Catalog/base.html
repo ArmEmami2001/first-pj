@@ -99,7 +99,15 @@
           <li><a href="{% url 'Catalog:authors' %}">All Authors</a></li>
           {% if user.is_authenticated %}
                <li>User: {{ user.get_username }}</li>
-               <li><a href="{% url 'logout'%}?next={{ request.get_full_path }}">Logout</a></li>   
+               <li><a href="{% url 'Catalog:my-borrowed' %}">My Borrowed</a></li>
+               <li>
+                 <form action="{% url 'logout' %}" method="POST" style="display: inline; margin: 0; padding: 0;">
+                   {% csrf_token %}
+                   <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                   <button type="submit" style="background:none; border:none; color:#8ab4f8; cursor:pointer; padding:0; font:inherit; text-decoration:none;">Logout</button>
+                 </form>
+               </li>
+
           {% else %}
                <li><a href="{% url 'login'%}?next={{ request.get_full_path }}">Login</a></li>   
           {% endif %} 
